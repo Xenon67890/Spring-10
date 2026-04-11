@@ -224,6 +224,8 @@ public class BaseCtl<F extends BaseForm, T extends BaseDTO, S extends BaseServic
 		ORSResponse res = new ORSResponse(true);
 
 		List<T> list = baseService.search(dto, pageNo, pageSize, userContext);
+		
+		System.out.println("listtttttttt  " + list.size()); 
 
 		List<T> nextList = baseService.search(dto, pageNo + 1, pageSize, userContext);
 

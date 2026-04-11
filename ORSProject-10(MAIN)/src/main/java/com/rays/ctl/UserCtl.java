@@ -152,16 +152,22 @@ public class UserCtl extends BaseCtl<UserForm, UserDTO, UserServiceInt> {
 		attachmentDto.setUserId(userId);
 
 		UserDTO userDto = userService.findById(userId, userContext);
+		
+		System.out.println("bbbbbbbbbbbbbbbbbbbbbbbb    " +userDto.getImageId() );
 
 		if (userDto.getImageId() != null && userDto.getImageId() > 0) {
 
-			attachmentDto.setId(userDto.getImageId());
+			attachmentDto.setId(userDto.getImageId());	
+			
+			System.out.println("bbbbbbbbbbbbbbbbbbbbbbbb    " +userDto.getImageId() );
 
 		}
 
 		Long imageId = attachmentService.save(attachmentDto, userContext);
 
 		if (userDto.getImageId() == null) {
+			
+			System.out.println("%%%%%%%%%%%%%%%%%%%%%%%   " + userDto.getId() ); 
 
 			userDto.setImageId(imageId);
 
