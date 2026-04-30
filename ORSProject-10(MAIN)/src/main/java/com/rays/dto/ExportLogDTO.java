@@ -86,7 +86,7 @@ public class ExportLogDTO extends BaseDTO {
 	@Override
 	public String getValue() {
 		// TODO Auto-generated method stub
-		return code;
+		return fileName;
 	}
 
 }
